@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap');
+
+:root {
+
+  --text-color: #1E293B;   
+  --color-primar: #1E3A8A;  /* Azul marino profundo para textos serios */
+  --color-accent: #00B4D8;   /* Cian vibrante para botones */
+  --color-bg: #F8FAFC;
+  --shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+*{box-sizing:border-box}
+
+body {
+  background-color: var( --color-bgr);
+  color: var(--text-color);
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.header{
+  background:#fff; 
+  position:fixed; 
+  top:0; left:0; right:0; 
+  padding:15px 40px; 
+  box-shadow:var(--shadow);
+  display:flex; 
+  justify-content:space-between; 
+  align-items:center; 
+  z-index:100;
+}
+.header__logo{ font-family: Montserrat, sans-serif; font-weight:700; color:var(--color-primary); font-size:1.2rem;}
+.header__actions{display:flex; gap:12px;}
+.action-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  color: var(--text-color, #1E293B);
+  transition: all 0.2s ease;
+  position: relative; /* Necesario para posicionar el badge del carrito */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--color-accent); /* Rojo alerta */
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  height: 18px;
+  width: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid white; /* Borde blanco para separar del icono */
+}
+
+.catalogo{ display:flex; flex-wrap:wrap; gap:30px; justify-content:center; max-width:1200px; margin:0 auto; padding:20px; min-height:50vh;}
+.producto{ background:#fff; width:280px; border-radius:15px; overflow:hidden; box-shadow:var(--shadow); display:flex; flex-direction:column; position:relative;}
+.producto__fav-btn{ position:absolute; top:10px; right:10px; background:rgba(255,255,255,0.8); border:none; border-radius:50%; width:35px; height:35px;}
+.producto__fav-btn--active{ color:#e74c3c;}
+.producto__imagen{ width:100%; height:180px; object-fit:cover;}
+.producto__contenido{ padding:20px; display:flex; flex-direction:column; flex-grow:1;}
+.producto__titulo{ margin:0 0 10px; font-family:Montserrat, sans-serif;}
+.producto__precio{ margin-top:auto; font-weight:bold; color:var(--color-accent);}
+.producto__btn{ padding:10px; border:none; border-radius:8px; background:var(--color-primary); color:white; cursor:pointer; margin-top:15px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer.css */
+
+.nexus-footer {
+  /* Usamos el azul oscuro definido en tus variables globales */
+  background-color: var(--primary-color, #1E3A8A);
+  color: #F1F5F9; /* Texto casi blanco */
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 4rem;
+  margin-top: auto; /* Empuja el footer al fondo si hay poco contenido */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  /* Grid responsivo: crea columnas automáticas de mínimo 250px */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 3rem;
+}
+
+/* --- ESTILOS DE COLUMNAS --- */
+.footer-column h3.footer-logo-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  color: #FFFFFF; /* Blanco puro para el logo */
+}
+
+.footer-column h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: var(--accent-color, #00B4D8); /* Títulos en CIAN para resaltar */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-desc {
+  line-height: 1.6;
+  color: #CBD5E1; /* Gris azulado claro */
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* --- ENLACES --- */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #CBD5E1;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+  color: var(--accent-color, #00B4D8); /* Efecto hover cyan */
+  padding-left: 5px; /* Pequeño desplazamiento a la derecha */
+}
+
+/* --- REDES SOCIALES --- */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: var(--accent-color, #00B4D8);
+}
+
+/* --- CONTACTO --- */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+  color: #CBD5E1;
+  font-size: 0.9rem;
+}
+
+.contact-icon {
+  color: var(--accent-color, #00B4D8);
+  min-width: 18px; /* Evita que el icono se aplaste */
+}
+
+/* --- COPYRIGHT INFERIOR --- */
+.footer-bottom {
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea divisoria sutil */
+  font-size: 0.85rem;
+  color: #94A3B8;
+}
+
