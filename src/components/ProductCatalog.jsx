@@ -1,6 +1,22 @@
 import ProductCard from './ProductCard'
 import React, { useState, useEffect } from 'react';
-export default function Catalog(){
+export default function Catalog({categoria}){
+
+    const categories = [
+  { key:'all', id:'0' },
+  { key:'clothes', id:'1' },
+  { key:'electronics', id:'2' },
+  { key:'Furniture', id:'3' },
+  {key:'shoes', id :'4'}
+]
+
+let selection = 0;
+if(categoria === 'all') selection = 0;
+if(categoria === 'clothes') selection = 1;
+if(categoria === 'electronics') selection = 2;
+if(categoria === 'Furniture') selection = 3;
+if(categoria === 'shoes') selection = 4;
+
 
 
     // 1. Estado para guardar los productos
@@ -14,12 +30,15 @@ export default function Catalog(){
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const limit = 10;
+        const limit = 40;
         const offset = 0;
+        let url = `https://api.escuelajs.co/api/v1/products?limit=${limit}&offset=${offset}`;
+
+        if (selection !== 0 ) {
+          url += `&categoryId=${selection}`;
+        }
         
-        const response = await fetch(
-          `https://api.escuelajs.co/api/v1/products?limit=${limit}&offset=${offset}`
-        );
+        const response = await fetch(url);
         
         if (!response.ok) {
           throw new Error('Error en la petición');
@@ -35,7 +54,7 @@ export default function Catalog(){
     };
 
     fetchData();
-  }, []);
+  }, [categoria]);
 
   // Renderizado condicional
   if (loading) return <div className="catalogo"><div className="loader">Cargando...</div></div>;

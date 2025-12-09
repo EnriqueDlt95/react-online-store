@@ -66,6 +66,11 @@ body {
   border: 2px solid white; /* Borde blanco para separar del icono */
 }
 
+
+.filters{ display:flex; justify-content:center; gap:15px; padding:30px 20px; padding-top: 90px;}
+.filter-btn{ padding:8px 20px; border-radius:20px; background:transparent; border:2px solid var(--color-primary); cursor:pointer; font-weight:600;}
+.filter-btn--active{ background:var(--color-accent); color:white;}
+
 .catalogo{ display:flex; flex-wrap:wrap; gap:30px; justify-content:center; max-width:1200px; margin:0 auto; padding:20px; min-height:50vh;}
 .producto{ background:#fff; width:280px; border-radius:15px; overflow:hidden; box-shadow:var(--shadow); display:flex; flex-direction:column; position:relative;}
 .producto__fav-btn{ position:absolute; top:10px; right:10px; background:rgba(255,255,255,0.8); border:none; border-radius:50%; width:35px; height:35px;}
